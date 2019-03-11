@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'PT Sans', sans-serif;
+
+    #app {
+        background: #eee;
+        height: inherit;
+
+        & > main {
+            height: inherit;
+        }
+
+    }
+
+}
