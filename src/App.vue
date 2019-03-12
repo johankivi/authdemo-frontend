@@ -11,8 +11,10 @@ export default {
   beforeMount(){
     
   },
-  computed(){
-    return this.$store.state.activeUser.name;
+  computed: {
+    user(){
+      return this.$store.state.activeUser.name;
+    }
   }
 }
 </script>

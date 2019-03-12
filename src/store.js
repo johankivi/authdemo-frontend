@@ -7,11 +7,15 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     apiUrl: 'http://localhost:3000',
-    activeUser: {}
+    activeUser: {},
+    rejected: false
   },
   mutations: {
     setActiveUser(state, user){
       state.activeUser = user;
+    },
+    toggleRejected(state){
+      state.rejected = !state.rejected;
     }
   },
   actions: {
@@ -26,6 +30,12 @@ export default new Vuex.Store({
         // update activeUser for UI ( ex. "Greger is logged in." )
 
       } catch(err) {
+
+          ctx.commit('toggleRejected');
+        setTimeout(()=>{
+          ctx.commit('toggleRejected');
+        }, 1000)
+
         console.error(err);      
       }
     },
